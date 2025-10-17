@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Pedido de comida a domicilio
+	- Nombre
+	- Teléfono
+	- Dirección
+	- Número de menú
+	Comidas para seleccionar (se pueden elegir varias):
+	- Ensalada 7€
+	- Pizza 12€
+	- Montadito 3€
+	- Postre 2.5€
+	Y al final se elige el tamaño:
+	- Pequeño
+	- Grande (Vale 2€ más)
+
+	Hacer un formulario para realizar el pedido
+	Hacer un fichero php para procesarlo que te muestre la información introducida por el cliente y el precio total del pedido -->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+</head>
+<body>
+	<form action="formulario.php" method="post">
+		<h2>Pedido de comida a domicilio</h2>
+		<h3>Datos</h3>
+		<p>Nombre: <input type="text" name="nombre" size="30" required></p>
+		<p>Número de teléfono: <input type="tel" name="telef" size="30" required></p>
+		<p>Dirección: <input type="text" name="direc" size="50" required></p>
+		<p>Número de menús: <input type="number" name="num-menu" size="50" required></p>
+		<p><input type="checkbox" name="ensalada">Ensalada</p>
+		<p><input type="checkbox" name="pizza">Pizza</p>
+		<p><input type="checkbox" name="montadito">Montadito</p>
+		<p><input type="checkbox" name="postre">Postre</p>
+		<p><select name="tamano">
+			<option value="peque">Pequeño</option>
+			<option value="grande">Grande</option>
+		</select>
+		</p>
+		<input type="submit" value="Enviar">
+		<input type="reset" value="Reset">
+	</form>
