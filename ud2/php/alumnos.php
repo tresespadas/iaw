@@ -1,3 +1,10 @@
+<?php
+/* 
+   PARA HACERLO CON UNA SESIÓN: 
+*/
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
