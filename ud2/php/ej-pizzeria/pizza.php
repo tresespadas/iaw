@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -50,13 +53,13 @@
       </p>
       <p>
       <?php
-          $num_ingre=$_POST['ingre'];
-          for ($i=1;$i<=$num_ingre;$i++)
-          {
-            echo "<label for='ingre$i'>Ingrediente $i:</label>";
-            echo "<input type='text' id='ingre$i' name='ingre$i' required><br>";
-            echo "<br>";
-          }
+      $num_ingre=$_POST['ingre'];
+      for ($i=1;$i<=$num_ingre;$i++)
+      {
+        echo "<label for='ingre$i'>Ingrediente $i:</label>";
+        echo "<input type='text' id='ingre$i' name='ingre$i' required><br>";
+        echo "<br>";
+      }
       ?>
       </p>
 		</fieldset>
