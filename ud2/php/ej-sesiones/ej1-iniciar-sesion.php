@@ -9,6 +9,9 @@ if (isset($_POST['nombre']))
     $_SESSION['num_visitas']=0;
   }
   $_SESSION['nombre']=$_POST['nombre'];
+
+  // Con esto le quitas la pregunta del Confirm Form Resubmision:
+  // header("Location: ej1-iniciar-sesion.php")
 }
 
 //Si ya hay una sesion con nombre
