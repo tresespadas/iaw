@@ -1,8 +1,20 @@
 <?php
 session_start();
+// Si se envía por POST un nombre
 if (isset($_POST['nombre']))
 {
+  // Si es el primer nombre o se cambia el nombre
+  if (!isset($_SESSION['nombre']) || $_POST['nombre'] != $_SESSION['nombre'])
+  {
+    $_SESSION['num_visitas']=0;
+  }
   $_SESSION['nombre']=$_POST['nombre'];
+}
+
+//Si ya hay una sesion con nombre
+if (isset($_SESSION['nombre']))
+{
+  $_SESSION['num_visitas']++;
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +25,7 @@ if (isset($_POST['nombre']))
     <title>Ejercicio 1 - Sesiones</title>
   </head>
   <body>
-    <form action="ej1.php" method="post">
+    <form action="ej1-iniciar-sesion.php" method="post">
     <fieldset>
       <legend>Datos</legend>
       <label for="nombre">Nombre: </label>
@@ -26,6 +38,8 @@ if (isset($_POST['nombre']))
     if (isset($_SESSION['nombre']))
     {
       echo "<br>La sesion se ha cargado correctamente. Tu nombre es: {$_SESSION['nombre']}";
+      echo "<br>Has visitado la página {$_SESSION['num_visitas']} veces";
+      echo "<br><a href='ej1-cerrar-sesion.php'>Pulsa aquí para cerrar sesión</a>";
     } else {
       echo "<br>La sesión aún no se ha cargado. Escribe tu nombre y dale a Enviar";
     }
