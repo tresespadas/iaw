@@ -1,0 +1,10 @@
+Cliente: Estefanía
+Email: estefi@tefi.com
+Ciudad: Chiclana
+Método de envío: Estándar
+Libros elegidos:
+Cien años de soledad
+Crónica de una muerte anunciada
+1984
+Don Quijote de la Mancha
+Total a pagar: 75€
