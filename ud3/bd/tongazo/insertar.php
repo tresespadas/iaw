@@ -9,7 +9,7 @@
   <?php
   require 'funciones.php';
   $pdo = conecta("localhost","tongazo","root");
-  if ($pdo == null)
+  if ($pdo == NULL)
   {
     echo "Ha ocurrido un error con la conexión";
     exit;

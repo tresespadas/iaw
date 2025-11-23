@@ -12,7 +12,7 @@ function conecta($servidor,$bd,$usuario,$clave="")
   catch (PDOException $e)
   {
     echo "La conexión ha fallado por ".$e->getMessage();
-    return null;
+    return NULL;
   }
 }
 ?>
