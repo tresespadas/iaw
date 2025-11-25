@@ -30,6 +30,7 @@
     <input type="submit" value="Guardar en la BD">
   </form>
   <?php
+  // Debo hacer un if que controle que se insertan datos (con 1 campo basta)
   try
   {
     $pdo->query("INSERT INTO vehiculos (matricula,marca,modelo,kms,precio) VALUES ('$matricula','$marca','$modelo','$kms','$precio')");
