@@ -31,13 +31,24 @@
   </form>
   <?php
   // Debo hacer un if que controle que se insertan datos (con 1 campo basta)
-  try
+  if (isset($_POST['matricula']))
   {
-    $pdo->query("INSERT INTO vehiculos (matricula,marca,modelo,kms,precio) VALUES ('$matricula','$marca','$modelo','$kms','$precio')");
-  }
-  catch (PDOException $e)
-  {
-    echo "La conexión ha fallado por ".$e->getMessage();
+    // Recogida de datos del formulario
+    $matricula = $_POST['matricula'];
+    $marca = $_POST['marca'];
+    $modelo = $_POST['modelo'];
+    $kms = $_POST['kms'];
+    $precio = $_POST['precio'];
+
+    try
+    {
+      #echo "INSERT INTO vehiculos (matricula,marca,modelo,kms,precio) VALUES ('$matricula','$marca','$modelo','$kms','$precio')";
+      $pdo->query("INSERT INTO vehiculos (matricula,marca,modelo,kms,precio) VALUES ('$matricula','$marca','$modelo','$kms','$precio')");
+    }
+    catch (PDOException $e)
+    {
+      echo "La conexión ha fallado por ".$e->getMessage();
+    }
   }
   ?>
   </body>

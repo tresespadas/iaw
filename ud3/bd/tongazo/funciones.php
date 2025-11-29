@@ -6,7 +6,7 @@ function conecta($servidor,$bd,$usuario,$clave="")
     $dsn = "mysql:host=$servidor;dbname=$bd";
     $pdo = new PDO($dsn,$usuario,$clave);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Conexión establecida";
+    #echo "Conexión establecida";
     return $pdo;
   }
   catch (PDOException $e)
