@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html>
 <head>
 	<style>
@@ -35,19 +38,33 @@ else{
 echo "<hr>";
 //Mostrado sencillo
 echo "<table>";
-echo "<tr><th>Nombre</th><th>Primer apellido</th><th>Edad</th><th>Borrar</th></tr>";
+if ($_SESSION['acceso']){
+	echo "<tr><th>Nombre</th><th>Primer apellido</th><th>Edad</th><th>Borrar</th><th>Editar</th></tr>";
+}
+else{
+	echo "<tr><th>Nombre</th><th>Primer apellido</th><th>Edad</th></tr>";
+}
 while ($fila = $resultado->fetch()){ 
 	echo "<tr>";
 	echo "<td>".$fila['nombre']."</td>"; 
 	echo "<td>".$fila['apellido1']."</td>";
-	echo "<td>".$fila['edad']."</td>";?>
+	echo "<td>".$fila['edad']."</td>";
+	if ($_SESSION['acceso']){
+	?>
 	<td>
 	<form action="borrar.php" method="post">
 	<input type="hidden" name="borrar" value='<?php echo $fila['ID']; ?>'>
 	<input type="submit" value="Borrar">
 	</form>
 	</td>
+	<td>
+	<form action="editar.php" method="post">
+	<input type="hidden" name="editar" value='<?php echo $fila['ID']; ?>'>
+	<input type="submit" value="Editar">
+	</form>
+	</td>
 <?php
+	}
 	echo "</tr>";
 }
 echo "</table>";
