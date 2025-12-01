@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -39,6 +42,7 @@
     </fieldset>
     <input type="submit" value="Buscar vehículo">
   </form>
+  <a href="index.php">Volver al menú</a>
   </p>
   <?php
   if (isset($_POST['valor']))
