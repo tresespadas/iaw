@@ -12,7 +12,7 @@ session_start();
   <h2>Buscar vehículo</h2>
   <?php
   require 'funciones.php';
-  $pdo = conecta("localhost","tongazo","root");
+  $pdo = conecta("conexion.txt");
   if ($pdo == NULL)
   {
     echo "Ha ocurrido un error en la conexión";

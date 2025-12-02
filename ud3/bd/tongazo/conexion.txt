@@ -1,0 +1,4 @@
+Parámetros para la conexión con la base de datos
+localhost
+tongazo
+root

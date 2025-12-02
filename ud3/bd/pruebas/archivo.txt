@@ -1,0 +1,4 @@
+Parámetros de conexión con la bbdd
+hola
+hola1
+hola2

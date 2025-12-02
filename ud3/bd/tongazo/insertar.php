@@ -13,7 +13,7 @@ $num_coches = $_POST['num-coches'];
   <h2>Insertar vehículo</h2>
   <?php
   require 'funciones.php';
-  $pdo = conecta("localhost","tongazo","root");
+  $pdo = conecta("conexion.txt");
   if ($pdo == NULL)
   {
     echo "Ha ocurrido un error con la conexión";
