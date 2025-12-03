@@ -37,14 +37,19 @@ $contenido = $pdo->query("SELECT COUNT(*) FROM vehiculos"); // Comprobación si 
 
       $cabecera = fgets($archivo);
 
-      while($matricula = trim(fgets($archivo)) !== false);
+      while(!feof($archivo))
       {
+        $matricula = trim(fgets($archivo));
+        if ($matricula == "")
+        {
+          break;
+        }
         $marca = trim(fgets($archivo));
         $modelo = trim(fgets($archivo));
         $kms = trim(fgets($archivo));
         $precio = trim(fgets($archivo));
-        $separador = trim(fgets($archivo));
 
+        //echo "INSERT INTO vehiculos (matricula, marca, modelo, kms, precio) VALUES ($matricula,?,?,?,?)";
         $insert = $pdo->prepare("INSERT INTO vehiculos (matricula, marca, modelo, kms, precio) VALUES (?,?,?,?,?);");
         $insert->execute([$matricula,$marca,$modelo,$kms,$precio]);
       }
