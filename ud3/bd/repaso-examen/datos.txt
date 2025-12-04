@@ -1,0 +1,16 @@
+Datos de los alumnos para la base de datos
+nombre1
+apellido1
+5.0
+
+Rafael
+Fernandez
+7.5
+
+Estefania
+Poyatos
+9.9
+
+Alvaro
+Cabello
+8.8

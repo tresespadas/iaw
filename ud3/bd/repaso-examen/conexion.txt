@@ -1,0 +1,4 @@
+Parámetros de conexión de la Base de Datos
+localhost
+root
+repaso
