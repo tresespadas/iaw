@@ -69,6 +69,7 @@ if (!isset($_SESSION["autorizado"]))
                 $consulta->execute();
             }
             echo "Datos insertados correctamente";
+            echo "<br>";
             echo "<a href='index.php'>Volver al inicio</a>";
         }
     ?>
