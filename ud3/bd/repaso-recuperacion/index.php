@@ -16,7 +16,7 @@ session_start();
     <?php
     if (isset($_SESSION["autorizado"]))
     {
-        echo "<a href='no-acceder.php'>Cerrar sesión</a>";
+        echo "<a href='no-acceder.php'>Desconectar</a>";
     }
     else
     {
