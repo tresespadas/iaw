@@ -20,4 +20,27 @@ function conecta($bd)
     }
 }
 
+function leer_tipos($nombre_archivo)
+{
+    $handler = fopen($nombre_archivo, "r");
+
+    fgets($handler);
+    $arr = [];
+    while(!feof($handler))
+    {
+        $linea = fgets($handler);
+        if ($linea == "")
+        {
+            break;
+        }
+        else
+        {
+            #$arr[] = $linea;
+            array_push($arr, $linea);
+        }
+    }
+    fclose($handler);
+    
+    return $arr;
+}
 ?>
