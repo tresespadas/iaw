@@ -36,6 +36,7 @@ function leer_tipos($nombre_archivo)
         else
         {
             #$arr[] = $linea;
+            $linea = trim($linea);
             array_push($arr, $linea);
         }
     }
