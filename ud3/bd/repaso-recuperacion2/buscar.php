@@ -1,6 +1,11 @@
 <?php
 session_start();
 require 'funciones.php';
+if (!isset($_SESSION['root'])) // Evitando un path trasversal [?]
+{
+    echo "Se necesita una cuenta de usuario para esta función. Pincha <a href='index.php'>aquí</a> para volver al inicio.";
+    die();
+}
 ?>
 
 <!DOCTYPE html>

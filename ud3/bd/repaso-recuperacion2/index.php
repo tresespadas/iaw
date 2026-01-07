@@ -12,21 +12,17 @@ require 'funciones.php';
 <body>
     <h2>Netflix</h2>
     <?php
-    if ((!isset($_POST['iniciar'])) && (!isset($_SESSION['logged'])))// Si no está logueado
+    if (isset($_SESSION['logged'])) // Si el inicio de sesión es exitoso
     {
-        echo "<form action='index.php' method='post'>";
-        echo "<fieldset>";
-        echo "<legend>Inicia sesión</legend>";
-        echo "<label for='usuario'>Nombre</label>";
-        echo "<input type='text' name='usuario' id='usuario'>";
-        echo "<br>";
-        echo "<label for='pass'>Contraseña</label>";
-        echo "<input type='password' name='pass' id='pass'>";
-        echo "</fieldset>";
-        echo "<input type='submit' name='iniciar' id='iniciar' value='Inicia sesión'>";
-        echo "</form>";
+        echo "<a href='buscar.php'>Buscar película o serie de TV</a><br>";
+        if (isset($_SESSION['root']))
+        {
+            echo "<a href='borrar.php'>Borrar una película o serie de TV</a><br>";
+            echo "<a href='insertar.php'>Introduce una película o serie de TV</a><br>";
+        }
+        echo "<a href='no-login.php'>Cerrar sesión</a><br>";
     }
-    else // Si ha intentado iniciar sesión
+    elseif (isset($_POST['iniciar'])) // Comprobando credenciales
     {
         $usuario = $_POST['usuario'];
         $password = $_POST['pass'];
@@ -42,11 +38,13 @@ require 'funciones.php';
             {
                 $_SESSION['root'] = true;
                 $_SESSION['logged'] = true;
+                header('Location: index.php');
             }
             else
             {
                 $_SESSION['usuario'] = true;
                 $_SESSION['logged'] = true;
+                header('Location: index.php');
             }
             #echo "Inicio de sesión exitoso como {$usuario}";
             #echo "<br>";
@@ -57,16 +55,19 @@ require 'funciones.php';
             echo "Pulsa <a href='index.php'>aquí</a> para volver a intentarlo.";
         }
     }
-
-    if (isset($_SESSION['logged'])) // Si el inicio de sesión es exitoso
+    else // Página principal (login)
     {
-        echo "<a href='buscar.php'>Buscar película o serie de TV</a><br>";
-        if (isset($_SESSION['root']))
-        {
-            echo "<a href='borrar.php'>Borrar una película o serie de TV</a><br>";
-            echo "<a href='insertar.php'>Introduce una película o serie de TV</a><br>";
-        }
-        echo "<a href='no-login.php'>Cerrar sesión</a><br>";
+        echo "<form action='index.php' method='post'>";
+        echo "<fieldset>";
+        echo "<legend>Inicia sesión</legend>";
+        echo "<label for='usuario'>Nombre</label>";
+        echo "<input type='text' name='usuario' id='usuario'>";
+        echo "<br>";
+        echo "<label for='pass'>Contraseña</label>";
+        echo "<input type='password' name='pass' id='pass'>";
+        echo "</fieldset>";
+        echo "<input type='submit' name='iniciar' id='iniciar' value='Inicia sesión'>";
+        echo "</form>";
     }
     ?>
 
