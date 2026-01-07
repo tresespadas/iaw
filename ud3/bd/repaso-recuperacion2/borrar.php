@@ -32,6 +32,9 @@ require 'funciones.php';
         echo "</fieldset>";
         echo "<input type='submit' name='borrar' value='Borrar'>";
         echo "</form>";
+        echo "<footer>";
+        echo "<a href='index.php'>Volver al inicio</a>";
+        echo "</footer>";
 
         if (isset($_POST['borrar']))
         {
@@ -49,11 +52,13 @@ require 'funciones.php';
             }
             else
             {
-                
+                $borrado = $pdo->query("DELETE FROM series WHERE titulo = '$nombre'");
+                $resultado = $borrado->rowCount();
+
+                echo "Se han borrado {$resultado} serie con el nombre '$nombre'";
             }
         }
-
-
     ?>
+
 </body>
 </html>

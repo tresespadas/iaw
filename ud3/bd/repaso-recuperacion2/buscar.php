@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'funciones.php';
-if (!isset($_SESSION['root'])) // Evitando un path trasversal [?]
+if (!isset($_SESSION['logged'])) // Evitando un path trasversal [?]
 {
     echo "Se necesita una cuenta de usuario para esta función. Pincha <a href='index.php'>aquí</a> para volver al inicio.";
     die();
@@ -64,7 +64,7 @@ if (!isset($_SESSION['root'])) // Evitando un path trasversal [?]
             }
             else
             {
-                $busqueda = $pdo->query("SELECT series.titulo, temporadas.fecha_estreno, temporada FROM series LEFT JOIN temporadas ON series.id=temporadas.id_serie WHERE series.titulo LIKE '%$nombre%'");
+                $busqueda = $pdo->query("SELECT series.titulo, series.fecha_estreno, temporada FROM series LEFT JOIN temporadas ON series.id=temporadas.id_serie WHERE series.titulo LIKE '%$nombre%'");
 
                 echo "<table>";
                 echo "<tr>";
