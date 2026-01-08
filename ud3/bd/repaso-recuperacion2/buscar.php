@@ -14,6 +14,13 @@ if (!isset($_SESSION['logged'])) // Evitando un path trasversal [?]
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix - Buscar película o serie de TV</title>
+    <style>
+        table, th, tr, td
+        {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <?php

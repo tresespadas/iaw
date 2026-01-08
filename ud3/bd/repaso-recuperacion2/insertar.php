@@ -50,7 +50,13 @@ require 'funciones.php';
 
             if ($tipo == 'película')
             {
-                $insertar = $pdo->query("INSERT INTO peliculas (titulo,fecha_estreno,duracion) VALUES ('$nombre','$fecha','$duracion')");
+                #$insertar = $pdo->query("INSERT INTO peliculas (titulo,fecha_estreno,duracion) VALUES ('$nombre','$fecha','$duracion')");
+                $insertar = $pdo->prepare("INSERT INTO peliculas (titulo,fecha_estreno,duracion) VALUES (?,?,?)");
+                $insertar->bindParam(1,$nombre);
+                $insertar->bindParam(2,$fecha);
+                $insertar->bindParam(3,$duracion);
+                $insertar->execute();
+
                 $resultado = $insertar->rowCount();
 
                 echo "Se ha insertado la película {$nombre}";
