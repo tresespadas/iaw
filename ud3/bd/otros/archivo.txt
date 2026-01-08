@@ -1,0 +1,9 @@
+DATOS DE USUARIO
+nombre
+Ana
+email
+ana.perez@gmail.com
+edad
+30
+pareja
+true
