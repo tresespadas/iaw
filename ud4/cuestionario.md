@@ -12,4 +12,18 @@ El siguiente paso corresponde a la creación de una base de datos para nuestro s
 
 Como preferencia personal, utilizo la herramienta de consola wp-cli para el resto de la instalación. Es decir, la configuración de wp-config (wp config create), la propia instalación de wordpress (wp core install), y actualizar las urls del wordpress mediante wp option.
 
+A modo de resumen:
+```
+wp config create
+```
+Crea /var/www/wordpress/wp-config.php con las credenciales de la base de datos
+```
+wp core install
+```
+Instala Wordpress en la base de datos usando ese archivo
+```
+wp option update
+```
+Modifica los valores en la tabla wp-options de la DB, leyendo las credenciales desde wp-config.wp
+
 Finalmente, tan sólo quedaría estabalecer un VirtualHost para apache2 y habilitarlo.
