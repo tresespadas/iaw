@@ -27,3 +27,20 @@ wp option update
 Modifica los valores en la tabla wp-options de la DB, leyendo las credenciales desde wp-config.wp
 
 Finalmente, tan sólo quedaría estabalecer un VirtualHost para apache2 y habilitarlo.
+
+## Licencias de software
+
+### Software libre y software propietario
+El software libre carece de copyright. No tiene porque ser gratuito. El usuario tiene libertad para usarlo, copiarlo, modificarlo y distribuirlo a su gusto.
+
+El software propietario es aquel en el que su dueño legal prohibe o limita la copia, redistribución y modificación sin su permiso o pago previo.
+
+Además de estos dos tipos de software también existe el software gratuito o de dominio público, que carece de copyright y se puede utilizar aunque el autor puede imponer restricciones para su redistribución y sus derivados.
+
+### Tipos de software libre
+
+Software libre con protección Copyleft:
+La licencia posee una serie de restricciones que son de obligado cumplimiento para los distribuidores del código.
+
+Software libre sin protección Copyleft:
+Un programa distribuido bajo esta licencia se permite la modificación del producto y la posibilidad de licenciarlo bajo tus propios términos. No implica gratuidad y posee regulaciones legales.
